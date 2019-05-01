@@ -17,6 +17,7 @@
 	$poruka = "";
 	
 
+<<<<<<< HEAD
 	 if(!empty($_POST['email']) && !empty($_POST['password'])){
 	// if(isset($_POST['email'])){
 	
@@ -24,6 +25,68 @@
 	
 	
 	
+=======
+	 if(!empty($_POST['email']) && !empty($_POST['password'])):
+	// if(isset($_POST['email'])){
+	
+	
+	/*
+	 try
+		
+		 {
+		
+		 $connecting = new PDO("mysql:host=localhost; dbname=loginposs;", "root", "");
+		
+		
+	 }
+	
+		 catch (PDOException $e)
+		 {
+			
+			 echo $e->getMessage();
+			
+			 exit();
+			
+		 }
+	
+		 $email = $_POST['email'];
+		 $password = $_POST['password'];
+		
+		 $pdoquery = "INSERT INTO users (email, password) VALUES (:email, :password)";
+		
+		 $pdores = $connecting->prepare($pdoquery);
+		
+		 $pdoexe = $pdores->execute(array(":email" => $email, ":password" => $password));
+	
+	
+	 if($pdoexe)
+		
+		 {
+			
+			 echo "Korisnik unesen";
+			
+		 }
+		
+		else
+			
+			 {
+				
+				 echo "korisnik nije unesen";
+				
+			 }
+	
+	
+	*/
+	
+	
+	
+	
+	 // $password = $_POST['password'];
+	 // $cfp = $_POST['confirm_password'];
+	 // $email = $_POST['email'];
+	
+	
+>>>>>>> fc733090fc17ac1fa581a46d7f9881e74e334751
 		$sql_query = "INSERT INTO users (email, password) VALUES (:email, :password)";
 	
 		// priprema query na izvrsenje iz db
@@ -35,14 +98,22 @@
 		
 		
 		$password_hash = password_hash($_POST['password'], CRYPT_BLOWFISH);
+<<<<<<< HEAD
 	
 		if($_POST["confirm_password"] == $_POST["password"]){
+=======
+		
+>>>>>>> fc733090fc17ac1fa581a46d7f9881e74e334751
 	
 		$stmt->bindParam(':password',$password_hash);
 	
 	
 	
+<<<<<<< HEAD
 		if($stmt->execute()){
+=======
+		if($stmt->execute()):
+>>>>>>> fc733090fc17ac1fa581a46d7f9881e74e334751
 	
 			
 			$poruka = "Korisnik uspjesno registriran";
@@ -50,14 +121,21 @@
 			//die('Uspjesno registrirani');
 	
 	
+<<<<<<< HEAD
 			}
 	
 		else{
+=======
+			// }
+	
+		else:
+>>>>>>> fc733090fc17ac1fa581a46d7f9881e74e334751
 
 			$poruka = "Ponovno";
 		
 			//die('Ponovno');
 		
+<<<<<<< HEAD
 		}
 		
 		
@@ -71,6 +149,12 @@
 		}
 	
 	}
+=======
+		
+		endif;
+	
+	endif;
+>>>>>>> fc733090fc17ac1fa581a46d7f9881e74e334751
 	
 	
 	// }
